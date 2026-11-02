@@ -26,5 +26,43 @@
             </div>
         </div>
     </nav>
+    <div class="container py-4">
+        <h2 class="fw-bold mb-3">Task 11: Bouncing Ball</h2>
+
+        <div style="position: relative; height: 350px; border: 1px dashed #ccc; border-radius: 8px; background-color: #fff;" class="mb-3">
+            <div id="ball" style="width: 60px; height: 60px; background-color: #0d6efd; position: absolute; left: 20px; top: 20px; border-radius: 100%;"></div>
+        </div>
+
+        <div class="d-flex gap-2">
+            <button id="start-btn" class="btn btn-dark">Start Animation</button>
+            <button id="reset-btn" class="btn btn-outline-secondary">Reset</button>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#start-btn").click(function(){
+                $("#ball").stop(true)
+                    .animate({ top: "20px", left: "20px" }, 500, "linear")
+                    .animate({ top: "280px", left: "160px" }, 300, "linear")
+                    .animate({ top: "70px",  left: "300px" }, 450, "linear")
+                    .animate({ top: "280px", left: "440px" }, 300, "linear")
+                    .animate({ top: "130px", left: "560px" }, 400, "linear")
+                    .animate({ top: "280px", left: "670px" }, 250, "linear")
+                    .animate({ top: "200px", left: "800px" }, 350, "linear")
+                    .animate({ top: "280px", left: "950px" }, 300, "linear")
+                    .animate({ top: "280px", left: "1200px" }, 800, "linear")
+            });
+
+            $("#reset-btn").click(function(){
+                $("#ball").stop(true).animate({
+                    left: "20px",
+                    width: "60px",
+                    height: "60px",
+                    top: "20px",
+                }, 800);
+            });
+        });
+    </script>
 </body>
 </html>
