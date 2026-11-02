@@ -26,5 +26,43 @@
             </div>
         </div>
     </nav>
+    <div class="container py-4">
+        <h2 class="fw-bold mb-3">Task 7: Form Interaction</h2>
+
+        <div class="card p-4 shadow-sm" style="max-width: 500px;">
+            <form>
+                <div class="mb-3">
+                    <label for="nameInput" class="form-label fw-semibold">Name:</label>
+                    <input type="text" id="nameInput" class="form-control" placeholder="Enter your name">
+                </div>
+                <div class="mb-3">
+                    <label for="emailInput" class="form-label fw-semibold">Email:</label>
+                    <input type="email" id="emailInput" class="form-control" placeholder="Enter your email">
+                </div>
+            </form>
+
+            <hr class="my-3">
+
+            <div>
+                <h5 class="fw-bold">Live Output:</h5>
+                <p class="mb-1"><strong>Name:</strong> <span id="nameOutput" class="text-primary">—</span></p>
+                <p class="mb-0"><strong>Email:</strong> <span id="emailOutput" class="text-primary">—</span></p>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#nameInput").on("input", function(){
+                const nameValue = $(this).val();
+                $("#nameOutput").text(nameValue.trim() || "-");
+            });
+
+            $("#emailInput").on("input", function(){
+                const emailValue = $(this).val();
+                $("#emailOutput").text(emailValue.trim() || "-");
+            });
+        });
+    </script>
 </body>
 </html>
