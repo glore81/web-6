@@ -26,5 +26,31 @@
             </div>
         </div>
     </nav>
+    <div class="container py-4">
+        <h2 class="fw-bold mb-3">Task 4: Slide Methods</h2>
+        <div id="panel" class="card p-4 shadow-sm mb-3" style="max-width: 600px;">
+            <h4>Paragraph</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repudiandae explicabo praesentium ad sapiente ullam quas magnam corrupti repellendus qui itaque est dicta labore soluta illum omnis, reprehenderit minima et?</p>
+        </div>
+        <button id="sUp" class="btn btn-dark">Slide up</button>
+        <button id="sDown" class="btn btn-dark">Slide down</button>
+        <button id="toggle" class="btn btn-dark">Toggle</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#sUp").click(function() {
+                $("#panel").slideUp();
+            });
+
+            $("#sDown").click(function() {
+                $("#panel").slideDown();
+            });
+
+            $("#toggle").click(function() {
+                $("#panel").slideToggle();
+            });
+        });
+    </script>
 </body>
 </html>
