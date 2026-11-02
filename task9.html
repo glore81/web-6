@@ -26,5 +26,39 @@
             </div>
         </div>
     </nav>
+    <div class="container py-4">
+        <h2 class="fw-bold mb-3">Task 9: Sequential Animations</h2>
+
+        <div style="position: relative; height: 260px; border: 1px dashed #ccc; border-radius: 8px; background-color: #fff;" class="mb-3">
+            <div id="box" style="width: 60px; height: 60px; background-color: #0d6efd; position: absolute; left: 20px; top: 20px; border-radius: 6px;"></div>
+        </div>
+
+        <div class="d-flex gap-2">
+            <button id="start-btn" class="btn btn-dark">Start Animation</button>
+            <button id="reset-btn" class="btn btn-outline-secondary">Reset</button>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#start-btn").click(function(){
+                $("#box")
+                    .stop(true)
+                    .animate({left: "220px"}, 500)
+                    .animate({top: "180px"}, 400)
+                    .animate({width: "35px", height: "35px"}, 400)
+                    .animate({left: "20px", top: "20px", width: "60px", height: "60px" }, 700);
+            });
+
+            $("#reset-btn").click(function(){
+                $("#box").stop(true).css({
+                    left: "20px",
+                    width: "60px",
+                    height: "60px",
+                    top: "20px"
+                });
+            });
+        });
+    </script>
 </body>
 </html>
