@@ -26,5 +26,31 @@
             </div>
         </div>
     </nav>
+    <div class="container py-4">
+        <h2 class="fw-bold mb-3">Task 3: Fade Methods</h2>
+        <div class="card p-4 shadow-sm mb-3" style="max-width: 600px;">
+            <h4>Photo</h4>
+            <img src="cat.jpg" alt="cat" class="imgC img-fluid rounded">
+        </div>
+        <button id="fin" class="btn btn-dark">Fade in</button>
+        <button id="fout" class="btn btn-dark">Fade out</button>
+        <button id="ftoggle" class="btn btn-dark">Fade toggle</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#fin").click(function() {
+                $(".imgC").fadeIn();
+            });
+
+            $("#fout").click(function() {
+                $(".imgC").fadeOut();
+            });
+
+            $("#ftoggle").click(function() {
+                $(".imgC").fadeToggle();
+            });
+        });
+    </script>
 </body>
 </html>
