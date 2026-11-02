@@ -26,5 +26,34 @@
             </div>
         </div>
     </nav>
+    <div class="container py-4">
+        <h2 class="fw-bold mb-3">Task 6: Modifying Attributes</h2>
+        <div class="card p-4 shadow-sm mb-3" style="max-width: 500px;">
+            <div class="mb-3">
+                <img id="my-img" src="cat.jpg" alt="cat" class="img-fluid rounded" style="max-height: 250px; object-fit: cover;">
+            </div>
+            <div>
+                <a id="my-link" href="https://google.com" target="_blank" class="fw-bold text-decoration-none">Visit Google</a>
+            </div>
+        </div>
+
+        <div class="d-flex gap-2">
+            <button id="chimg" class="btn btn-dark">Change Image</button>
+            <button id="chlink" class="btn btn-dark">Change Link</button>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $("#chimg").click(function() {
+                $("#my-img").attr("src", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmDKPxQ4w1I1FEjRILeW5dJve1F4AoqRl8C6I12RxS00YNheHPMRXFia4&s=10");
+            });
+
+            $("#chlink").click(function() {
+                $("#my-link").attr("href", "https://github.com").text("Visit GitHub");
+            });
+        });
+    </script>
 </body>
 </html>
