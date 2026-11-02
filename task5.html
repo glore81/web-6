@@ -26,5 +26,39 @@
             </div>
         </div>
     </nav>
+    <div class="container py-4">
+        <h2 class="fw-bold mb-3">Task 5: Add & Remove Elements</h2>
+        <div class="card p-4 shadow-sm mb-3" style="max-width: 600px;">
+            <h4>List</h4>
+            <ul class="list">
+                <li class="items">Item 1</li>
+            </ul>
+        </div>
+        <button id="first" class="btn btn-dark">Add (first)</button>
+        <button id="last" class="btn btn-dark">Add (last)</button>
+        <button id="delete" class="btn btn-dark">Delete</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            let count = 1;
+            $("#first").click(function() {
+                count++;
+                $(".list").prepend(`<li class="items">Item ${count}</li>`);
+            });
+
+            $("#last").click(function() {
+                count++;
+                $(".list").append(`<li class="items">Item ${count}</li>`);
+            });
+
+            $("#delete").click(function() {
+                if ($(".list li").length > 0) {
+                    $(".list li:last-child").remove();
+                    count--;
+                }
+            });
+        });
+    </script>
 </body>
 </html>
